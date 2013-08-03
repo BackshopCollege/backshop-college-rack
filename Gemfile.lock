@@ -19,6 +19,7 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
+    timecop (0.6.2.2)
 
 PLATFORMS
   ruby
@@ -28,3 +29,4 @@ DEPENDENCIES
   pry
   rack
   thin
+  timecop
