@@ -8,13 +8,22 @@
   $ curl http://localhost:8000
   <html>
     <body>
-      
       GET / HTTP/1.1 <br>
-      User-Agent: curl/7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8r zlib/1.2.5 <br>
       Host: localhost:8000 <br>
       Accept: */* <br>
-
      </body>
   </html>
 
 =end
+
+
+class Sample2App
+  
+  def self.call(env)
+    path = env["PATH_INFO"]
+    method = env["REQUEST_METHOD"]
+    host = env["HTTP_HOST"]
+    [ 200, { "Content-Type" => "text/html"}, ["<html><body><br>#{method} #{path}<br>Host: #{host}<br></body></html>"]]
+  end
+
+end
