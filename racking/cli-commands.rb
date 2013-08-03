@@ -44,14 +44,21 @@ $ irb -rrack
   # Go to your browser and point to http://localhost:3000
   # BAMN
 --
-  # 5
+  # 5 to create a rack app, you only need respond to call ( Callable objects )
+
+  require 'date'
   class Backshop
+    def initialize
+      @created_at = DateTime.now.to_s 
+    end
+
     def call(env)
-      [200, {"Content-Type" => "text/plain" } , ["Be welcome Thin"] ]
+      [200, {"Content-Type" => "text/plain" } , ["Be welcome Thin, I was created at #{@created_at}"] ]
     end
   end
 
-  Rack::Handler::Thin.run Backshop.new.method(:call), :Port => 3000
+  method = Backshop.new.method(:call)
+  Rack::Handler::Thin.run method, :Port => 3000
 
 
 
