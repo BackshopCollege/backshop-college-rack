@@ -1,0 +1,22 @@
+require 'webrick'
+require_relative '../app/app'
+
+class BackshopHandler < WEBrick::HTTPServlet::AbstractServlet
+  
+  def initialize(app)
+    @app = BackshopGreentingsApp.new
+  end
+
+  def do_GET(request, response)
+    status, content_type , body = @app.get(request)
+    response.status = status
+    response['Content-Type']  = content_type
+    response.body = body
+  end
+
+end
+
+server = WEBrick::HTTPServer.new :Port => 3000
+trap 'INT' do server.shutdown end
+server.mount '/', BackshopHandler
+server.start
