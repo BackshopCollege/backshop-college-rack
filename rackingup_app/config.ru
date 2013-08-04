@@ -2,9 +2,10 @@
 
 $: << "."
 
-require 'app'
+require 'bieber/bieber'
+require 'backshop'
 
 use Rack::ShowExceptions
 use Rack::Reloader
 
-run App
+run Bieber::App
