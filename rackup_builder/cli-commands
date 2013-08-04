@@ -1,0 +1,25 @@
+# RACK BUILDER DSL
+
+app = Rack::Builder.new do
+  use Rack::ShowExceptions
+  
+  map "/backshop" do 
+    run lambda { |env| [200, { "Content-Type" => "text/html"} , ["This backshop is awesome ! BAM !" ] ] }
+  end
+
+  run lambda { |env| [200, {"Content-Type" => "text/html"}, [" OWW YEAH BAM BAM BAM"]]}
+end
+
+Rack::Handler::Thin.run app, :Port => 3000
+
+--
+
+ # config.ru #
+ run lambda { |env| [200, {"Content-Type" => "text/html"}, [" OWW YEAH BAM BAM BAM"]]}
+ # config.ru #
+
+config = File.read "config.ru"
+app = eval("Rack::Builder.new { #{config} }" )
+app.call({})
+
+--
