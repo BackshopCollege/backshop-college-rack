@@ -4,12 +4,9 @@ class App
   end
 
   def call(env)
-    req = Rack::Request.new env
-    body = if req['name']
-      "Welcome Mr. #{req['name']}"
-    else
-      'Anonymous'
-    end
-    [200, {}, [body]]
+    res = Rack::Response.new
+    res['Content-Type'] = 'text/plain'
+    res.write "My App Framework is Rocking :) BAM !!!"
+    res.finish
   end
 end
