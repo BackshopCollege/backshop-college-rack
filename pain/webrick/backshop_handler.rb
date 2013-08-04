@@ -7,7 +7,7 @@ class BackshopHandler < WEBrick::HTTPServlet::AbstractServlet
     @app = BackshopGreentingsApp.new
   end
 
-  def do_GET(request, response)
+  def service(request, response)
     status, content_type , body = @app.get(request)
     response.status = status
     response['Content-Type']  = content_type
