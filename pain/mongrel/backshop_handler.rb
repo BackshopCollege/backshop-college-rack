@@ -31,6 +31,7 @@ class BackshopMongrelHandler < Mongrel::HttpHandler
 
 end
 
- h = Mongrel::HttpServer.new("0.0.0.0", "3000")
- h.register("/", BackshopMongrelHandler.new)
- h.run.join
+h = Mongrel::HttpServer.new("0.0.0.0", "3000")
+h.register("/", BackshopMongrelHandler.new)
+puts "Server Running port 3000"
+h.run.join

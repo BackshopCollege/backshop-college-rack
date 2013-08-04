@@ -60,6 +60,11 @@ $ irb -rrack
   method = Backshop.new.method(:call)
   Rack::Handler::Thin.run method, :Port => 3000
 
+--
+
+# Lets benchmark
+$ ab -C 100  -n 10000 http://localhost:3000/backshop  
+# Requests per second:    2382.91 [#/sec] (mean)
 
 
 
