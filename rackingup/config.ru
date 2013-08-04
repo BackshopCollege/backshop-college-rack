@@ -1,3 +1,5 @@
+#\ -p 3920
+
 $: << "."
 require 'backshop'
 
