@@ -5,14 +5,13 @@ $: << "."
 require 'backshop'
 require 'myapp'
 
-app_ruby = Rack::Reloader.new(MyApp)
-app_backshop = Rack::Reloader.new(Backshop.new)
+use Rack::Reloader
 
 map "/ruby" do
-  run app_ruby
+  run MyApp
 end
 
 map "/backshop" do 
-  run app_backshop
+  run Backshop.new
 end
 
