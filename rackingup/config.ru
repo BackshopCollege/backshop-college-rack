@@ -5,6 +5,7 @@ $: << "."
 require 'backshop'
 require 'myapp'
 
+use Rack::ShowExceptions
 use Rack::Reloader
 
 map "/ruby" do
