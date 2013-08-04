@@ -3,9 +3,12 @@
 
 $: << "."
 require 'backshop'
+require 'myapp'
+
+use Rack::Reloader
 
 map "/ruby" do
-  run lambda { |env| [ 200,  { "Content-Type" => "text/plain"} , ["Rack is really cool"]]}
+  run MyApp
 end
 
 map "/backshop" do 
