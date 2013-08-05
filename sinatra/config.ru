@@ -1,8 +1,10 @@
+$:<< "."
 
-require 'rack'
+require 'sinatra/mimic'
 
-
-use Rack::Reloader
+get '/time' do 
+  "Hello World -> #{Time.now}"
+end
 
 to_404 = proc do |env|
   
