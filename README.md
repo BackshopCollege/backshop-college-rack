@@ -1,7 +1,7 @@
 ## Workshop about Rack
 --
 
-To understand the workshop sequence, follow the tags sequence ;)
+To understand the workshop sequence, follow the tags;)
 
 ````
 git tag -ln
