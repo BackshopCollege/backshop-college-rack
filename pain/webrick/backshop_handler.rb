@@ -3,7 +3,8 @@ require_relative '../app/app'
 
 class BackshopHandler < WEBrick::HTTPServlet::AbstractServlet
   
-  def initialize(app)
+  def initialize(server)
+    super(server)
     @app = BackshopGreentingsApp.new
   end
 
