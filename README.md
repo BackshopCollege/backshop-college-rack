@@ -1,4 +1,4 @@
-## Workshop about Rack
+#### Rack Backshop College
 --
 
 To understand the workshop sequence, follow the tags;)
