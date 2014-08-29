@@ -1,7 +1,8 @@
 #### Rack Backshop College   
-
-http://slides.com/tdantas/backshop-rack
 --
+Slides at: http://slides.com/tdantas/backshop-rack
+
+
 
 To understand the workshop sequence, follow the tags;)
 
