@@ -1,4 +1,6 @@
-#### Rack Backshop College
+#### Rack Backshop College   
+
+http://slides.com/tdantas/backshop-rack
 --
 
 To understand the workshop sequence, follow the tags;)
